@@ -13,5 +13,11 @@ namespace testweb.Pages
 		{
 
 		}
+
+		[Route("api/login")]
+		[HttpGet]
+		protected void Login(object sender, EventArgs e)
+		{
+		}
 	}
 }
