@@ -1,0 +1,58 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div onload="inicio();">
+	<div id="app">
+		<div class="login_desc">
+			<img id="logo" class="logo_login" src="~/images/logo.png" alt="Logo Trend Viagens" height="250" width="250"></img>
+
+			<p id="descricaoInicial" class="descricao_inicial">O Trend Viagens ajuda você a<br />escolher os melhores destinos<br />baseados nas suas preferênias.<br />Ao realizar o cadastro, você obterá<br />em primeira mão todas as melhores<br />dicas de viagens, e ainda pode se conectar com<br />outras pessoas.</p>
+		</div>
+		<div class="login_user_pass">
+			<md-card id="card-login">
+				<md-card-header>
+					<h1 class="md-title">Acesse sua Conta</h1>
+				</md-card-header>
+
+				<md-card-content>
+					<md-field md-clearable>
+						<label>Usuario</label>
+						<md-input v-model="initial" id="usuario"></md-input>
+					</md-field>
+
+					<md-field>
+						<label>Password</label>
+						<md-input v-model="password" id="senha" type="password"></md-input>
+					</md-field>
+				</md-card-content>
+
+				<input style="margin-left: 15px;" type="checkbox" name="lembrar" id="lembrar" value="lembrete"> Lembrar-me</input>
+
+				<md-card-actions>
+					<md-button onclick="">Login</md-button>
+				</md-card-actions>
+			</md-card>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-material@beta"></script>
+	<script>
+		Vue.use(VueMaterial.default)
+
+		new Vue({
+			el: '#app'
+		})
+	</script>
+	<script>
+		export default {
+			name: 'InlineActions',
+			data: () => ({
+				initial: 'Initial Value',
+				password: 'mysecurepassword'
+			})
+		}
+	</script>
+</div>

@@ -1,0 +1,92 @@
+.descricao_inicial {
+	text-align: center;
+	position: relative;
+}
+
+.login_desc {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 49%;
+	height: 100%;
+}
+
+.login_user_pass {
+	position: relative;
+	float: right;
+	width: 49%;
+	height: 100%;
+}
+
+.logo_login {
+	margin-left: 30%;
+}
+
+.logo_tb {
+	float: left;
+	width: 70px;
+}
+
+.md-field:last-child {
+	margin-bottom: 40px;
+}
+
+#card-login {
+	margin-top: 15%;
+}
+
+.container-img {
+	position: relative;
+	padding: 1%;
+}
+
+.card-img {
+	max-width: 60%;
+	max-height: 40%;
+	margin-left: 20%;
+}
+
+.container-titulo {
+	text-align: center;
+	padding: 1%;
+}
+
+.container-toolbar {
+	background-color: rgb(214, 214, 214);
+	overflow: hidden;
+}
+
+.container-right {
+	float: right;
+	margin-top: 7px;
+}
+
+.container-toolbar a {
+	float: left;
+	text-decoration-color: black;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 17px;
+}
+
+	.container-toolbar a:hover {
+		background-color: rgb(0, 0, 0);
+		color: rgb(255, 255, 255);
+	}
+
+.container-table {
+	position: relative;
+	padding: 1%;
+}
+
+.container-input {
+	position: relative;
+	padding: 1%;
+}
+
+.md-progress-bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+}
