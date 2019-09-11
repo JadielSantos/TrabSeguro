@@ -1,0 +1,168 @@
+﻿@page
+@model HomeModel
+@{
+	ViewData["Title"] = "Login";
+}
+
+	<div onload="carregar();">
+		<div id="app">
+
+			<nav id="menu" class="container-toolbar">
+				<img id="logo" class="logo_tb" src="img/logo.png" alt="Logo Trend Viagens">
+
+				<div class="container-right">
+					<a href="#" class="current" onclick="altera('Home');">Home</a>
+					<a href="#" class="current" onclick="altera('Servicos');">Serviços</a>
+					<a href="#" class="current" onclick="altera('Lugares');">Lugares</a>
+					<a href="#" class="current" onclick="altera('Conta');">Conta</a>
+					<a href="#" class="current" onclick="altera('Sobre');">Sobre</a>
+					<md-button class="md-icon-button" style="margin-top: 5px">
+						<md-icon>search</md-icon>
+					</md-button>
+				</div>
+			</nav>
+
+			<div class="container-titulo">
+				<h1 id="titulo-principal">O Melhor Site de Viagens do Brasil!</h1>
+			</div>
+
+			<div class="container-img">
+				<md-card class="card-img">
+					<md-card-media-cover md-solid>
+						<md-card-media md-ratio="16:9">
+							<img src="img/viagem.png" alt="viagem">
+						</md-card-media>
+
+						<md-card-area>
+							<md-card-header>
+								<span class="md-title">Compartilhe sua experiência com a comunidade!</span>
+							</md-card-header>
+
+							<md-card-actions>
+								<md-button class="md-icon-button">
+									<md-menu md-size="medium" :mdCloseOnSelect="closeOnSelect" md-align-trigger>
+										<md-button md-menu-trigger><md-icon>more_vert</md-icon></md-button>
+
+										<md-menu-content>
+											<md-menu-item>Compartilhar</md-menu-item>
+											<md-menu-item>Curtir</md-menu-item>
+											<md-menu-item>Mapa</md-menu-item>
+										</md-menu-content>
+									</md-menu>
+								</md-button>
+							</md-card-actions>
+						</md-card-area>
+					</md-card-media-cover>
+				</md-card>
+			</div>
+
+			<div class="container-table">
+				<md-table id="table" md-card>
+					<md-table-toolbar>
+						<h1 class="md-title">Viagens</h1>
+					</md-table-toolbar>
+
+					<md-table-row>
+						<md-table-head>Nome Completo</md-table-head>
+						<md-table-head>E-mail</md-table-head>
+						<md-table-head>Endereço</md-table-head>
+						<md-table-head>CPF</md-table-head>
+						<md-table-head>Número Celular</md-table-head>
+					</md-table-row>
+					<template>
+						<tbody style="margin-left: 10px;">
+							<md-table-row>
+								<md-table-cell id="nomeTb"></md-table-cell>
+								<md-table-cell id="emailTb"></md-table-cell>
+								<md-table-cell id="enderecoTb"></md-table-cell>
+								<md-table-cell id="cpfTb"></md-table-cell>
+								<md-table-cell id="numeroTb"></md-table-cell>
+							</md-table-row>
+						</tbody>
+					</template>
+				</md-table>
+			</div>
+
+			<div class="container-input">
+				<form>
+					<md-card>
+						<md-card-content>
+							<md-field>
+								<label>* Nome Completo</label>
+								<md-input v-model="initial" id="nome"></md-input>
+							</md-field>
+
+							<md-field>
+								<label>* Email</label>
+								<md-input v-model="initial" id="email"></md-input>
+							</md-field>
+
+							<md-field>
+								<label>* Endereço</label>
+								<md-input v-model="initial" id="endereco"></md-input>
+							</md-field>
+
+							<md-field>
+								<label>* CPF</label>
+								<md-input v-model="initial" id="cpf"></md-input>
+							</md-field>
+
+							<md-field>
+								<label>* Número Celular</label>
+								<md-input v-model="initial" id="numero"></md-input>
+							</md-field>
+						</md-card-content>
+
+						<md-card-actions style="float: left">
+							<md-button class="md-raised md-accent" onclick="limparCampos();">Cancelar</md-button>
+							<md-button class="md-raised md-primary" onclick="validarCadastro();">Cadastrar</md-button>
+						</md-card-actions>
+
+					</md-card>
+				</form>
+
+			</div>
+
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/vue-material@beta"></script>
+		<script>
+			Vue.use(VueMaterial.default)
+
+			new Vue({
+				el: '#app'
+			})
+		</script>
+		<script>
+			export default {
+				name: 'MediaCover'
+			}
+		</script>
+		<script>
+			export default {
+				name: 'ContentActions'
+			}
+		</script>
+		<script>
+			export default {
+				name: 'TableCard'
+			}
+		</script>
+		<script>
+			export default {
+				name: 'MenuAlignments'
+			}
+		</script>
+		<script>
+			var header = document.getElementById("menu");
+			var btns = header.getElementsByClassName("current");
+			for (var i = 0; i < btns.length; i++) {
+				btns[i].addEventListener("click", function () {
+					var current = document.getElementsByClassName("active");
+					current[0].className = current[0].className.replace(" active", "");
+					this.className += " active";
+				});
+			}
+		</script>
+	</div>

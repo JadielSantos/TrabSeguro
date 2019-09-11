@@ -21,7 +21,7 @@ function proximo() {
 
 		localStorage.setItem("expire", expiration.getTime());
 
-		window.location.href = "home.html";
+		window.open('@Url.Action("Home", "Main")');
 	}
 }
 
